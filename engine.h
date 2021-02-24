@@ -23,6 +23,7 @@ public:
                             "lasersword", 1,
                             "coins", 100);
         std::cout << "Items given to " << _worldInv._name << "!" << std::endl;
+        
         _playerInv._name = "Player";
         _playerInv.giveItems("apple", 4);
         _playerInv.giveItems("sword", 1);

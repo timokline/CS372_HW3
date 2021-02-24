@@ -6,6 +6,7 @@
 //  - templated variadic function (w/ recursion method)
 //  - auto
 //  - brace initialization
+//  - and more!
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
@@ -92,8 +93,8 @@ public:
 protected:
     container_element getItem(const std::string& itemName)
     {
-        auto itr = _data.find(itemName);
-        if(itr != _data.end())
+        //initialization statement inside if
+        if(auto itr = _data.find(itemName); itr != _data.end())
         {
             auto& item = itr->second;
             return item;
