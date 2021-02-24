@@ -12,8 +12,8 @@ This is a simple program that demonstrates a state machine for a game with inven
 
 # Modern C++ Features
 * **Variadic Template**
-  * MAIN TOPIC: I was always intrigued by how these worked since I'd see `ARGS...` plenty of times in other people's code;  My main focus was implementing this as a way to initialize several params without calling the function every single time.
   * `class Inventory` uses a recursion to "unpack" a number of item-quantity pairs for storing.
+  * **\[MAIN TOPIC\]** > I was always intrigued by how these worked since I'd see `ARGS...` plenty of times in other people's code. My main focus was implementing this as a way to initialize several params without calling the function every single time.
 * `unordered_map`
   * This is the primary container type used for the `Inventory class`.
 * `auto`
