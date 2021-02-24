@@ -6,6 +6,7 @@
 
 struct Item
 {
+    Item &Item::operator=(const Item &);
     const std::string name;
     int amount;
 };
@@ -22,14 +23,41 @@ public:
     using container_type = std::unordered_map<container_key, container_element>;
 
 public:
-    container_element getItem(std::string itemName)
+    template<typename I, typename Q>
+    void giveItems(const I &itemName, const Q &quantity)
     {
-        return {"",0};
+
     };
-    void giveItem(std::string itemName, int quantity)
-    {};
+
+    template <typename I, typename Q, typename... Args>
+    void giveItems(const I &itemName, const Q &quantity, Args... otherItems)
+    {
+        giveItems(itemName, quantity);
+        giveItems(otherItems...);
+    };
+
+    void setCurrItem(const std::string &itemName)
+    {
+        _currItem = getItem(itemName);
+    }
+
     void itemObtained()
     {};
+
+protected:
+    container_element getItem(const std::string &itemName)
+    {
+        auto itr = _data.find(itemName);
+        if(itr != _data.end())
+        {
+            auto& item = itr->second;
+            return item;
+        }
+        else
+        {
+            return {"",0};
+        }
+    };
 
 private:
     container_element _currItem;
