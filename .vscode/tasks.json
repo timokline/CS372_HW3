@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang.exe build active file",
+			"command": "C:/Program Files/LLVM/bin/clang.exe",
+			"args": [
+				"-std=c++17",
+				"-g",
+				"${workspaceFolder}\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\.debug\\modernCplusplus.exe"
+			],
+			"options": {
+				"cwd": "C:/Program Files/LLVM/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: \"C:/Program Files/LLVM/bin/clang.exe\""
+		}
+	]
+}
